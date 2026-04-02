@@ -41,7 +41,7 @@ class TodoListGUI:
     def add_task(self):
         task = self.task_entry.get()
         if task:
-            success, message = self.todo_list.add_task(task)
+            _, message = self.todo_list.add_task(task)
             messagebox.showinfo("添加任务", message)
             self.update_task_list()
             self.task_entry.delete(0, tk.END)
@@ -74,7 +74,7 @@ class TodoListGUI:
             return
         for index in reversed(selected_indices):
             task = self.task_listbox.get(index)
-            success, message = self.todo_list.remove_task(task)
+            _, message = self.todo_list.remove_task(task)
             messagebox.showinfo("删除任务", message)
         self.update_task_list()
 
